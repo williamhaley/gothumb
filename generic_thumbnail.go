@@ -3,7 +3,9 @@ package gothumb
 import (
 	"github.com/nfnt/resize"
 	"image"
+	_ "image/gif"
 	"image/jpeg"
+	_ "image/png"
 	"os"
 )
 
