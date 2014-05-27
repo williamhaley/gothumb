@@ -28,11 +28,11 @@ func Transform(orientation int, transformer Transformer) error {
 	case 5:
 		return transformer.Transpose()
 	case 6:
-		return transformer.Rotate270()
+		return transformer.Rotate90()
 	case 7:
 		return transformer.Transverse()
 	case 8:
-		return transformer.Rotate90()
+		return transformer.Rotate270()
 	}
 
 	return fmt.Errorf("Invalid orientation: %d", orientation)
