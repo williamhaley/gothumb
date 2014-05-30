@@ -76,7 +76,7 @@ func Thumbnail(in io.Reader, size int, quality int) (out io.ReadCloser, err erro
 		return
 	}
 
-	if isJpeg && orientation != 1 {
+	if isJpeg && CanTransform(orientation) && orientation != 1 {
 		transformer := NewEpegTransformer(thumbnail.Name(), output.Name())
 
 		err = Transform(orientation, transformer)

@@ -37,3 +37,7 @@ func Transform(orientation int, transformer Transformer) error {
 
 	return fmt.Errorf("Invalid orientation: %d", orientation)
 }
+
+func CanTransform(orientation int) (ok bool) {
+	return orientation >= 1 && orientation <= 8
+}
