@@ -48,6 +48,12 @@ func Thumbnail(in io.Reader, size int, quality int) (out io.ReadCloser, err erro
 		return
 	}
 
+	defer func() {
+		if out == nil { // we haven't successfuly delegated file removing responsibility
+			os.Remove(output.Name())
+		}
+	}()
+
 	err = output.Close()
 
 	if err != nil {
