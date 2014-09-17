@@ -20,7 +20,10 @@ func Orientation(reader io.Reader) (orientation int, err error) {
 		return 1, nil
 	}
 
-	orientation = int(orientTag.Int(0))
+	orientation, err = orientTag.Int(0)
+	if err != nil {
+		return
+	}
 
 	return
 }
