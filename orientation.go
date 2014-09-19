@@ -1,7 +1,7 @@
 package gothumb
 
 import (
-	"github.com/rwcarlsen/goexif/exif"
+	"github.com/koofr/goexif/exif"
 	"io"
 )
 
