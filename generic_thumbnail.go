@@ -1,7 +1,7 @@
 package gothumb
 
 import (
-	"github.com/nfnt/resize"
+	"github.com/koofr/resize"
 	"image"
 	_ "image/gif"
 	"image/jpeg"
