@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"reflect"
 	"testing"
+	"github.com/jkmcnk/goepeg"
 )
 
 var sourceInput []byte = []byte{
@@ -82,7 +83,7 @@ var thumbnailOutput []byte = []byte{
 func TestThumbnail(t *testing.T) {
 	reader := bytes.NewReader(sourceInput)
 
-	out, err := Thumbnail(reader, 4, 75)
+	out, err := Thumbnail(reader, 4, 75, goepeg.ScaleTypeFitMax)
 	if err != nil {
 		t.Fatal(err)
 	}
