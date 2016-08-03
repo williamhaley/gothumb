@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"reflect"
 	"testing"
-	"github.com/jkmcnk/goepeg"
+	"github.com/koofr/goepeg"
 )
 
 var pngInput []byte = []byte{

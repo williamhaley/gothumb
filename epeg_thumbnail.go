@@ -1,7 +1,7 @@
 package gothumb
 
 import (
-	"github.com/jkmcnk/goepeg"
+	"github.com/koofr/goepeg"
 )
 
 func EpegThumbnail(input string, output string, size int, quality int, scaleType goepeg.ScaleType) (err error) {

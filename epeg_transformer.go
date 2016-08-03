@@ -1,7 +1,7 @@
 package gothumb
 
 import (
-	"github.com/jkmcnk/goepeg"
+	"github.com/koofr/goepeg"
 )
 
 type EpegTransformer struct {

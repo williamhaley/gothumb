@@ -5,7 +5,7 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
-	"github.com/jkmcnk/goepeg"
+	"github.com/koofr/goepeg"
 )
 
 func Thumbnail(in io.Reader, size int, quality int, scaleType goepeg.ScaleType) (out io.ReadCloser, err error) {

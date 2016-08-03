@@ -7,7 +7,7 @@ import (
 	"image/jpeg"
 	"image/png"
 	"os"
-	"github.com/jkmcnk/goepeg"
+	"github.com/koofr/goepeg"
 )
 
 func GenericThumbnail(input string, output string, size int, quality int, scaleType goepeg.ScaleType) (err error) {
