@@ -3,9 +3,9 @@ package gothumb
 import (
 	"github.com/koofr/resize"
 	"image"
-	_ "image/gif"
+	"image/gif"
 	"image/jpeg"
-	_ "image/png"
+	"image/png"
 	"os"
 	"github.com/jkmcnk/goepeg"
 )
@@ -27,7 +27,7 @@ func GenericThumbnail(input string, output string, size int, quality int, scaleT
 
 	defer writer.Close()
 
-	img, _, err := image.Decode(reader)
+	img, fmt, err := image.Decode(reader)
 
 	if err != nil {
 		return err
@@ -65,11 +65,19 @@ func GenericThumbnail(input string, output string, size int, quality int, scaleT
 		}
 	}
 
-	opts := &jpeg.Options{
-		Quality: quality,
+	if fmt == "png" {
+		png.Encode(writer, thumb)
+	} else if fmt == "gif" {
+		opts := &gif.Options{
+			NumColors: 256,
+		}
+		gif.Encode(writer, thumb, opts)
+	} else {
+		opts := &jpeg.Options{
+			Quality: quality,
+		}
+		jpeg.Encode(writer, thumb, opts)
 	}
-
-	jpeg.Encode(writer, thumb, opts)
 
 	return
 }
