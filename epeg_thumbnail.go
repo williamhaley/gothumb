@@ -4,6 +4,6 @@ import (
 	"github.com/koofr/goepeg"
 )
 
-func EpegThumbnail(input string, output string, size int, quality int) (err error) {
-	return goepeg.Thumbnail(input, output, size, quality)
+func EpegThumbnail(input string, output string, size int, quality int, scaleType goepeg.ScaleType) (err error) {
+	return goepeg.Thumbnail(input, output, size, quality, scaleType)
 }

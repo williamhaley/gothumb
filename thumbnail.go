@@ -5,9 +5,10 @@ import (
 	"io"
 	"io/ioutil"
 	"os"
+	"github.com/koofr/goepeg"
 )
 
-func Thumbnail(in io.Reader, size int, quality int) (out io.ReadCloser, err error) {
+func Thumbnail(in io.Reader, size int, quality int, scaleType goepeg.ScaleType) (out io.ReadCloser, err error) {
 	input, err := ioutil.TempFile("", "gothumb-input-")
 
 	if err != nil {
@@ -73,9 +74,9 @@ func Thumbnail(in io.Reader, size int, quality int) (out io.ReadCloser, err erro
 	isJpeg := err == nil
 
 	if isJpeg {
-		err = EpegThumbnail(input.Name(), thumbnail.Name(), size, quality)
+		err = EpegThumbnail(input.Name(), thumbnail.Name(), size, quality, scaleType)
 	} else {
-		err = GenericThumbnail(input.Name(), thumbnail.Name(), size, quality)
+		err = GenericThumbnail(input.Name(), thumbnail.Name(), size, quality, scaleType)
 	}
 
 	if err != nil {
