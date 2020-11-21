@@ -2,12 +2,12 @@ package gothumb
 
 import (
 	"github.com/koofr/resize"
+	"github.com/williamhaley/goepeg"
 	"image"
 	"image/gif"
 	"image/jpeg"
 	"image/png"
 	"os"
-	"github.com/koofr/goepeg"
 )
 
 func GenericThumbnail(input string, output string, size int, quality int, scaleType goepeg.ScaleType) (err error) {

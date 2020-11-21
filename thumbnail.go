@@ -2,10 +2,10 @@ package gothumb
 
 import (
 	"github.com/koofr/go-ioutils"
+	"github.com/williamhaley/goepeg"
 	"io"
 	"io/ioutil"
 	"os"
-	"github.com/koofr/goepeg"
 )
 
 func Thumbnail(in io.Reader, size int, quality int, scaleType goepeg.ScaleType) (out io.ReadCloser, err error) {
